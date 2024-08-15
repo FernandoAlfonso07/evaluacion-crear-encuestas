@@ -32,6 +32,6 @@ if ($create > 1) {
     exit();
 } else {
     $_SESSION['id_encuesta'] = Buscar::buscarID($title);
-    header("Location: ../view/config_pages.php?seccion=frm_crear_preguntas");
+    header("Location: ../view/config_pages.php?create=question&seccion=frm_crear_preguntas");
     exit();
 }

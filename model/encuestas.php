@@ -58,16 +58,25 @@ class Encuestas extends conexion
         return $s;
     }
 
-    public static function showQuestions($id_encuesta)
+    public static function showQuestions($id_encuesta, $opc)
     {
         $connect = self::getConexion();
-        $sql = "SELECT texto_pregunta FROM tb_preguntas WHERE id_encuesta = '$id_encuesta' ";
+        $sql = "SELECT texto_pregunta, texto_pregunta, id_pregunta FROM tb_preguntas WHERE id_encuesta = '$id_encuesta' ";
         $s = "";
         $response = $connect->query($sql);
 
         while ($row = $response->fetch_array()) {
 
-            $s .= "<li>" . $row[0] . "</li>";
+            if ($opc == "list") {
+                $s .= "<li>" . $row[0] . "</li>";
+                    
+            } elseif ($opc == "details") {
+                $s .= "
+                <div class='col-md-12 my 2'>
+                    <a href='config_pages.php?qstn=" . $row[2] . "&seccion=frm_crear_respuestas'>" . $row[1] . "</a>
+                </div>
+                ";
+            }
 
         }
         $connect->close();

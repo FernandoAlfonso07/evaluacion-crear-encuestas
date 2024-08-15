@@ -17,6 +17,40 @@ class Preguntas extends conexion
         $connect->close();
         return $s;
     }
+    public static function showResponses($id_pregunta, $opcSelected, $opc = null)
+    {
+        $connect = self::getConexion();
+        $sql = "SELECT * FROM tb_posibles_respuestas WHERE id_pregunta = '$id_pregunta' ";
+        $s = "";
+        $response = $connect->query($sql);
+
+        while ($row = $response->fetch_array()) {
+
+            if ($opcSelected == "list") {
+                $s = "<li>" . $row[1] . "</li>";
+
+            } elseif ($opc == "all") {
+                $s = isset($row[$opc]) ? $row[$opc] : null;
+            }
+
+        }
+        $connect->close();
+        return $s;
+    }
+
+    public static function showInfoQuestion($id_pregunta, $opc)
+    {
+        $connect = self::getConexion();
+        $sql = "SELECT * FROM tb_preguntas WHERE id_pregunta = '$id_pregunta' ";
+        $s = "";
+        $response = $connect->query($sql);
+
+        while ($row = $response->fetch_array()) {
+            $s = isset($row[$opc]) ? $row[$opc] : null;
+        }
+        $connect->close();
+        return $s;
+    }
 
     public static function crearPregunt($textQuestion, $id_encuesta)
     {
@@ -45,5 +79,5 @@ class Preguntas extends conexion
         return $affected_rows;
     }
 
-    
+
 }

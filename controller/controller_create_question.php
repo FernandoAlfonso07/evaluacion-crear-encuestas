@@ -16,6 +16,6 @@ if ($response > 1) {
 } else {
 
     $_SESSION['id_pregunta'] = Preguntas::buscaIdPregunta();
-    header("Location: ../view/config_pages.php?create=response&seccion=frm_crear_preguntas");
+    header("Location: ../view/config_pages.php?create=question&seccion=frm_crear_preguntas");
     exit();
 }
