@@ -1,6 +1,6 @@
 <div class="container my-5">
     <div class="row">
-        <form action="controller/controller_crear_encuesta.php" method="post">
+        <form action="../controller/controller_crear_encuesta.php" method="post">
             <h1>
                 Crear Encuesta
             </h1>
