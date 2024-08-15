@@ -27,7 +27,7 @@ class Preguntas extends conexion
         while ($row = $response->fetch_array()) {
 
             if ($opcSelected == "list") {
-                $s = "<li>" . $row[1] . "</li>";
+                $s .= "<li>" . $row[1] . "</li>";
 
             } elseif ($opc == "all") {
                 $s = isset($row[$opc]) ? $row[$opc] : null;

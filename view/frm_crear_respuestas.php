@@ -19,7 +19,7 @@ include_once("../model/preguntas.php");
         <div class="row">
             <div class="col-md-12 my-4">
                 Posibles respuestas a la pregunta
-                <? echo /*Preguntas::showInfoQuestion($_SESSION['id_pregunta'], 1)*/ $_SESSION['id_pregunta']; ?>
+                <?php echo Preguntas::showInfoQuestion($_SESSION['id_pregunta'], 1) ?>
             </div>
             <div class="col-md-12">
                 <ol>
