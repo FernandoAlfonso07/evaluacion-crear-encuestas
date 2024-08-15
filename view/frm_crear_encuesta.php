@@ -26,8 +26,7 @@
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" name="sn_publicar" type="radio" value="0" id="flexCheckChecked"
-                        checked>
+                    <input class="form-check-input" name="sn_publicar" type="radio" value="0" id="flexCheckChecked">
                     <label class="form-check-label" for="flexCheckChecked">
                         No
                     </label>

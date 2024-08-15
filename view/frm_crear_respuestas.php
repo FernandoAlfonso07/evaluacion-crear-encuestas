@@ -39,6 +39,9 @@ include_once("../model/preguntas.php");
                             </button>
                         </div>
                     </form>
+                    <a href="config_pages.php?seccion=frm_crear_respuestas" class="btn btn-danger">
+                        Cerrar y Guardar
+                    </a>
                 </div>
             </div>
         </div>
